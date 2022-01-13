@@ -1,10 +1,3 @@
----
-title: 前端基础知识
-date: 2019-12-26 00:00:01
-top: true
-cover: http://r.photo.store.qq.com/psc?/V51JZupb2WYeuQ2XPnHW1mg57E2MnzQp/TmEUgtj9EK6.7V8ajmQrEPoVcp5SSdnxpyVEeGbVChAAoJQfhLuu8J4uR5WW7JeGb8U57fU8xI*bR08zdZgGh1t3HTelOs79hV..CNDZZ1o!/r
-tags: [JavaScript]
----
 # 前端基础知识
 
 ## HTML + CSS问题
