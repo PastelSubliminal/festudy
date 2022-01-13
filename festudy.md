@@ -1,3 +1,10 @@
+---
+title: 前端基础知识
+date: 2019-12-26 00:00:01
+top: true
+cover: http://r.photo.store.qq.com/psc?/V51JZupb2WYeuQ2XPnHW1mg57E2MnzQp/TmEUgtj9EK6.7V8ajmQrEPoVcp5SSdnxpyVEeGbVChAAoJQfhLuu8J4uR5WW7JeGb8U57fU8xI*bR08zdZgGh1t3HTelOs79hV..CNDZZ1o!/r
+tags: [JavaScript]
+---
 # 前端基础知识
 
 ## HTML + CSS问题
@@ -31,32 +38,32 @@ ovevflow 不为 visible
 ### flex
 Flex 意为弹性布局，任何一个容器都可以指定为 Flex 布局。行内元素也可以使用 Flex 布局。
 flex-direction属性 该属性定义了子元素的排列方向
-```CSS
+```css
 .box{
     flex-direction: row | row-reverse | column | column-reverse;
 }
 ```
 flex-wrap属性 该属性称“轴线”的方向
-```CSS
+```css
 .box{
     flex-wrap: nowrap | wrap | wrap-reverse;
 }
 ```
 flex-flow属性：|| ; flex-direction 和 flex-wrap 的简写，默认值为 row nowrap
 justify-content 属性 该属性定义了子元素在主轴上的对齐方式
-```CSS
+```css
 .box{
     justify-content: flex-start | flex-end | center | space-between | space-around;
 }
 ```
 align-items 属性 该属性定义了项目在交叉轴上如何对齐
-```CSS
+```css
     .box{
         align-items: flex-start | flex-end | center | baseline | stretch;
     }
 ```
 align-content 属性，该属性定义了多跟轴线的对齐方式，如果项目只有一根轴线，该属性不起作用
-```CSS
+```css
     .box{
     align-content: flex-start | flex-end | center | space-between | space-around | stretch;
     }
@@ -129,7 +136,7 @@ DOM是文档对象模型，用来获取或设置文档中标签的属性，例�
 1. for in 遍历对象中所有属性，取出对应值
 2. 通过 sourceValue.constructor 拿到这个对象的构造函数的类型，新建对象或数组
 3. 取值如果是引用数类型，将遍历到的属性值复制给新建的空对象或数组，否则直接复制之前属性
-```JavaScript
+```js
 //通过遍历拿到 source 中的所有属性，取出当前遍历到的属性对应的值，判断当前的取值是否是引用数据类型（对象、数组、函数，一般是对象嵌套），通过 sourceValue.constructor 拿到这个对象的构造函数的类型，然后新建这个对象或数组，再次调用深拷贝，将遍历到的属性的值拷贝给新建的对象或数组，如果不是引用数据类型，之前的属性拷贝即可
 function deCopy(target， source){
     for(let key in source){
@@ -158,7 +165,7 @@ function deCopy(target， source){
 
 ### 数组去重
 方法一：倒进集合再倒出来
-```JavaScript
+```js
 [...new Set([1， 2， 2， 3， 4， 5， 5])]
 //[1， 2， 3， 4， 5]
 ```
@@ -167,7 +174,7 @@ function deCopy(target， source){
 
 ### ES6 的symol是什么，适用场景有什么
 一种特殊的数据类型，定义不可更改，适合用来作为属性名标识独一无二的对象
-```JavaScript
+```js
 //创建一个symbol类型的值
 const s = Symbol();
 console.log(typeof s);//"symbol"
@@ -367,7 +374,7 @@ this 永远不能被赋值，即 this 不能写在等号左边。
 
 ### 箭头函数没有arguments，怎么获取不知道数量的参数
 可以使用 ES6 的解构语法来代替。
-```JavaScript
+```js
 let func = (...args) => {
 	console.log('函数的参数是：'， args);
 }
@@ -460,7 +467,7 @@ Promise.all = function(values) {
 
 ### 对fetch的理解
 fetch() 方法是比 XMLHttpRequest 更简洁的 Ajax 请求。fetch 是全局量 window 的一个方法，第一个参数为 URL。
-```JavaScript
+```js
 // url (必须), options (可选)
 fetch('/some/url', {
     method: 'get'
@@ -590,7 +597,7 @@ sessionStorage 和 localStorage 用法一样，但是它只保存数据到浏览
 3. 缓存方式：堆使用二级缓存，生命周期由虚拟机的垃圾回收算法决定；栈使用的是一级缓存，调用时处于存储空间中，调用完毕立刻释放
 
 ### 递归求斐波那契数列
-```JavaScript
+```js
 function fibonacci(n){
     if(n < 1) return 0;
     if(n <= 2) return 1;
@@ -599,7 +606,7 @@ function fibonacci(n){
 ```
 
 ### 递归方式求1到100的和
-```JavaScript
+```js
 function add(n， m){
     var x = n + m;
     if(m + 1 > 100){
@@ -728,7 +735,7 @@ Vue.js 是采用数据劫持结合发布者-订阅者模式的方式，核心是
 实现一个指令解析器 Compile
 实现一个 Watcher，作为 Observer 和 Compile 的桥梁，能够订阅并收到每个属性变动的通知，执行指令绑定的相应回调函数，从而更新视图
 Mvvm 入口函数，整合以上三者
-```JavaScript
+```js
 <input v-model="userName" />
 <input v-bind:value="userName" v-on:input="userName = $event.target.value" />
 ```
@@ -779,11 +786,11 @@ redux 是为了解决 react 中组件与组件之间数据传递的问题。是�
 
 用法
 引入
-```HTML
+```html
 <script src="https://unpkg.com/redux@4.0.4/dist/redux.js">
 ```
 创造一个 store
-```JavaScript
+```js
 var store = Redux.createStore((state， action)=>{
     //do something
 }，state)
@@ -916,13 +923,13 @@ JSX 是 JavaScript 的语法扩展
 
 ### setState有哪些使用方式
 1. 传入新的 state 对象
-```JavaScript
+```js
 this.setState({
   age: 2，
 });
 ```
 2. 传入回调函数，并在回调函数里面返回新的 state 对象
-```JavaScript
+```js
 this.setState((prevState， props) => {
   return {
     age: prevState.age + props.age，
@@ -949,7 +956,7 @@ this.setState((prevState， props) => {
 
 ### useInterval和useDebounce
 useDebounce 钩子可让你消除任何快速变化的值。当在指定的时间段内未调用 useDebounce 钩子时，去抖动的值将仅反映最新的值。 你可以轻松地确保诸如 API 调用之类的昂贵操作不会过于频繁地执行。
-```JavaScript
+```js
 function useDebounce(value, delay) {
     const [debouncedValue, setDebouncedValue] = useState(value);
 
@@ -967,7 +974,7 @@ function useDebounce(value, delay) {
 }
 ```
 useInterval 设置了一个计时器，并且在组件 unmount 的时候清理掉了。 这是通过组件生命周期上绑定 setInterval 与 clearInterval 的组合完成的。
-```JavaScript
+```js
 import React, { useState, useEffect, useRef } from 'react';
 ​
 function useInterval(callback, delay) {
